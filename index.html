@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="bg-img">
+  <div class="login-container">
+    <div class="login-box">
+      <h2>Login</h2>
+      <form onsubmit="return loginUser(event)">
+        <label for="username">Email</label>
+        <input type="email" id="login-username" required placeholder="Enter registered email">
+
+        <label for="password">Password</label>
+        <input type="password" id="login-password" required minlength="6">
+
+        <button type="submit">Login</button>
+      </form>
+      <p class="signup-link">
+        Don’t have an account? <a href="signup.html">Sign up</a>
+      </p>
+    </div>
+  </div>
+
+  <!-- Firebase SDK -->
+  <script type="module">
+    import { firebaseConfig } from "./firebaseConfig.js";
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+    import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
+
+    
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+
+    window.loginUser = function (event) {
+      event.preventDefault();
+      const email = document.getElementById('login-username').value.trim();
+      const password = document.getElementById('login-password').value;
+
+      signInWithEmailAndPassword(auth, email, password)
+        .then(() => {
+          alert("Login successful!");
+          window.location.href = "dashboard.html";
+        })
+        .catch((error) => {
+          alert("Login failed: " + error.message);
+        });
+
+      return false;
+    };
+  </script>
+</body>
+</html>

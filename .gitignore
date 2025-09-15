@@ -1,0 +1,7 @@
+# Node / JS
+node_modules/
+.env
+# local config containing real API keys
+firebaseConfig.js
+# OS
+.DS_Store

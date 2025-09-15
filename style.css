@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  font-family: 'Ubuntu', sans-serif;
+  background: url(https://mybigplunge.com/wp-content/uploads/2021/08/World-Entrepreneurs-Day-celebrated-at-MIT-ADT-University-Pune-to-recognize-entrepreneurs-innovators-and-business-leaders.jpg.webp) no-repeat center center fixed;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-container {
+  backdrop-filter: blur(12px);
+  background: rgba(255, 255, 255, 0.3);
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  max-width: 400px;
+  width: 90%;
+  z-index: 1;
+}
+
+.login-box h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  color: #000;
+  font-weight: 700;
+  font-size: 26px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  color: #000;
+  margin-bottom: 5px;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+input {
+  padding: 12px;
+  margin-bottom: 18px;
+  border: none;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.75);
+  color: #000;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+input::placeholder {
+  color: #444;
+  font-weight: 400;
+}
+
+button {
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  padding: 12px;
+  font-weight: 700;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 15px;
+  transition: 0.3s ease;
+}
+
+button:hover {
+  background-color: rgba(0, 0, 0, 1);
+}
+
+.signup-link {
+  text-align: center;
+  margin-top: 15px;
+  color: #000;
+  font-weight: 500;
+}
+
+.signup-link a {
+  color: #000;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.signup-link a:hover {
+  text-decoration: underline;
+}
